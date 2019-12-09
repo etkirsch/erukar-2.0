@@ -1,0 +1,36 @@
+@import '../constants.scss';
+
+header {
+  top: 0;
+  position: absolute;
+  width: stretch;
+  color: $main-color-text;
+  background: $main-color;
+  position: fixed;
+  height: 50px;
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    left: 0;
+  }
+
+  .auth-row {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .title {
+    display: block;
+    text-align: center;
+    font-size: 18pt;
+    text-align: bottom;
+    z-index: 0;
+    padding-top: 12px;
+  }
+
+  .descriptor {
+    display: none;
+  }
+}
