@@ -1,7 +1,6 @@
 .landing-page {
   color: black;
   width: 100%;
-  margin-top: 50px;
 
   .artwork {
     object-fit: cover;
@@ -32,6 +31,10 @@
       flex-direction: column;
     }
 
+    @media (min-width: 1001px) {
+      margin-bottom: 1em;
+    }
+
     .content-item {
       vertical-align: center;
       flex: 1;
@@ -46,7 +49,8 @@
       @media (min-width: 1001px) {
         height: 24vw;
         width: 28vw;
-        max-width: 28vw;
+        max-width: 20em;
+        max-height: 20em;
         margin: 1vw;
         margin-top: 4vh;
       }
@@ -69,6 +73,7 @@
         height: 3em;
         vertical-align: middle;
         position: absolute;
+        line-height: 1.3em;
         top: 50%;
         width: stretch;
         transform: translate(0, -50%);
