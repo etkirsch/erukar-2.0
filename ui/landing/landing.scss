@@ -22,6 +22,8 @@
     position: relative;
     margin-right: 4vw;
     margin-left: 4vw;
+    width: stretch;
+    justify-content: center;
 
     @media (max-width: 1000px) {
       flex-direction: column;
@@ -37,11 +39,11 @@
       min-height: 10em;
       font-size: 14pt;
       position: relative;
-      padding: 2vw;
 
       @media (min-width: 1001px) {
         height: 24vw;
         width: 28vw;
+        max-width: 28vw;
         margin: 1vw;
         margin-top: 4vh;
       }
@@ -53,19 +55,25 @@
       }
 
       .title {
-        margin-top: 0.5em;
+        margin-top: 2em;
         margin-bottom: 1.5em;
         font-weight: bold;
       }
 
       .description {
         font-style: italic;
-        font-size: 12pt;
+        font-size: 11pt;
         height: 3em;
         vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        width: stretch;
+        transform: translate(0, -50%);
+        padding: 2em;
 
         @media (max-width: 1000px) {
           font-size: 10pt;
+          padding: 5vw;
         }
       }
 
