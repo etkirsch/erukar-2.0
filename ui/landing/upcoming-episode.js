@@ -1,11 +1,12 @@
 import React from 'react'
+import './upcoming-episode.scss'
 
 export default function UpcomingEpisode ({ episode }) {
-  let campaignName = 'The Second Scourge'
-  let episodeName = 'The Fall of Luinden'
-  let date = new Date()
-  let episodeLevel = 5
-  let characters = [4, 4, 5, 6]
+  let campaignName = episode.campaign.title
+  let episodeName = episode.title
+  let date = new Date(episode.date)
+  let episodeLevel = episode.level
+  let characters = episode.characters
 
   return (
     <div className='upcoming-episode'>

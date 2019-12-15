@@ -1,0 +1,84 @@
+.landing-page {
+  .upcoming-episode {
+    width: stretch;
+    background: green;
+    display: inline-flex;
+    position: relative;
+    height: 4em;
+    margin-left: 15vw;
+    margin-right: 15vw;
+
+    @media (max-width: 1000px) {
+      margin: 4%;
+      min-height: 8em;
+      margin-bottom: 0;
+    }
+
+    .logo {
+      background-color: orange;
+      height: 4em;
+      left: 0;
+      min-width: 4em;
+      display:block;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
+    }
+
+    .remainder {
+      display: inline;
+      width: stretch;
+      font-size: 12pt;
+      position: relative;
+
+      @media (max-width: 1000px) {
+        font-size: 12pt;
+      }
+      @media (max-width: 600px) {
+        font-size: 10pt;
+      }
+
+      .title-bar {
+        font-size: 18pt;
+        font-weight: bold;
+        padding: 0.5em;
+
+        @media (max-width: 600px) {
+          font-size: 14pt;
+        }
+      }
+
+      .at-a-glance {
+        font-style: italic;
+
+        @media (max-width: 1000px) {
+          position: absolute;
+          vertical-align: middle;
+          text-align: center;
+          top:50%;
+          width: stretch;
+          transform: translate(0, -50%);
+        }
+      }
+
+      .controls {
+        position: absolute;
+        text-decoration: underline;
+        width: stretch;
+        justify-content: center;
+        bottom: 1em;
+        display: flex;
+        text-align: center;
+
+        @media (max-width: 1000px) {
+          padding: 0;
+        }
+
+        div {
+          margin-right: 2em;
+        }
+      }
+    }
+  }
+}
