@@ -34,7 +34,8 @@ export default function LandingPage () {
   const contentSuggestions = [{
     title: 'Legends of Erukar',
     description: 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
-    friendly_id: 'content%20selection%2#1'
+    friendly_id: 'content%20selection%2#1',
+    isDismissible: true
   }, {
     title: 'Content Selection #1',
     description: 'This is the first content selection that you should see. There\'s not a lot here, but hopefully it will wrap. Let\'s see what happens.',
@@ -47,8 +48,9 @@ export default function LandingPage () {
 
   return (
     <div className='landing-page'>
-      <div className='artwork' />
-      <UpcomingEpisode episode={episode} />
+      <div className='artwork' style={{backgroundImage: 'url(/images/ashta-example.jpg)'}}>
+        <UpcomingEpisode episode={episode} />
+      </div>
       <LandingContentRow suggestions={contentSuggestions} />
     </div>
   )
