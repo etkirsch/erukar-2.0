@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentItem from './content-item'
+import ContentItem from './item'
 
 export default function LandingContentRow ({ suggestions }) {
   return (
