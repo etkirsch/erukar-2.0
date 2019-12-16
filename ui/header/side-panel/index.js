@@ -1,6 +1,26 @@
 import React from 'react'
 import SidePanelRow from './row'
 import './side-panel.scss'
+import { filterAuthenticationRequired } from './contents-builder'
+
+export const DefaultContents = [
+  { 
+    name: 'Home'
+  }, {
+    name: 'Campaign Planner'
+  }, {
+    name: 'Legends of Erukar',
+    requiresAuthentication: true,
+    requiresLegendsActivation: true
+  }, {
+    name: 'Divine Fonts'
+  }, {
+    name: 'Eikalan Lore'
+  }, {
+    name: 'Account Management',
+    requiresAuthentication: true
+  }
+]
 
 export function sidePanelClass (isOpen) {
   return (isOpen)
@@ -8,19 +28,12 @@ export function sidePanelClass (isOpen) {
     : 'side-panel'
 }
 
-const DefaultContents = [
-  'Home',
-  'Legends of Erukar',
-  'Campaign Planner',
-  'The Divine Fonts',
-  'Eikalan Lore',
-  'Account Management'
-]
+export default function SidePanel ({ isOpen, profile, contents=DefaultContents }) {
+  let profileContents = filterAuthenticationRequired({ contents, profile })
 
-export default function SidePanel ({ isOpen, contents=DefaultContents }) {
   return (
     <div className={sidePanelClass(isOpen)}>
-      {contents.map((content, i) => {
+      {profileContents.map((content, i) => {
         const key = `side-panel-row-element-${i}`
         return <SidePanelRow key={key} content={content} />
       })}
