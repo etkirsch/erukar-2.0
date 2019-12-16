@@ -56,7 +56,7 @@ export default function LandingPage () {
 
   return (
     <div className='landing-page'>
-      <div className='artwork' style={{backgroundImage: 'url(/images/ashta-example.jpg)'}}>
+      <div className='artwork' style={{backgroundImage: 'url(/static/images/ashta-example.jpg)'}}>
         <UpcomingEpisode episode={episode} />
       </div>
       <LandingContentArea suggestions={contentSuggestions} />

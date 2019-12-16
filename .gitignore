@@ -30,4 +30,5 @@ __pycache__/
 
 run.sh
 serve.sh
+build.sh
 /public/close-lock-local/
