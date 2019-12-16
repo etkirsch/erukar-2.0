@@ -1,0 +1,54 @@
+@import '../constants.scss';
+
+header {
+  top: 0;
+  width: stretch;
+  color: $main-color-text;
+  background: $main-color;
+  position: sticky;
+  z-index: 2;
+  height: 50px;
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    left: 0;
+    font-size: 14pt;
+    padding: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &:hover {
+      background-color: #1b1b1b;
+    }
+
+    svg {
+      transition: 200ms all;
+    }
+
+    &.rotated {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .auth-row {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .title {
+    display: block;
+    text-align: center;
+    font-size: 18pt;
+    text-align: bottom;
+    z-index: 0;
+    padding-top: 12px;
+  }
+
+  .descriptor {
+    display: none;
+  }
+}

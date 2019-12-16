@@ -1,0 +1,105 @@
+.landing-page {
+  color: black;
+  width: 100%;
+
+  .artwork {
+    object-fit: cover;
+    width: stretch;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: grid;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    height: calc(100vh - 50px);
+    background-position: center;
+
+    @media (max-width: 1000px) {
+      height: 60vh;
+    }
+  }
+
+  .content-area {
+    @media (min-width: 1001px) {
+      margin-bottom: 1em;
+    }
+
+    .content-row {
+      display: flex;
+      position: relative;
+      margin-right: 4vw;
+      margin-left: 4vw;
+      width: stretch;
+      justify-content: center;
+
+      @media (max-width: 1000px) {
+        flex-direction: column;
+
+        &:last-of-type {
+          margin-bottom: 1em;
+        }
+      }
+
+      .content-item {
+        vertical-align: center;
+        flex: 1;
+        background-color: #1b1b1b;
+        color: white;
+        margin-top: 1em;
+        margin-bottom: 0;
+        min-height: 10em;
+        font-size: 14pt;
+        position: relative;
+
+        @media (min-width: 1001px) {
+          height: 24vw;
+          width: 28vw;
+          max-width: 20em;
+          max-height: 18em;
+          margin: 1vw;
+          margin-top: 4vh;
+        }
+
+        .title {
+          margin-top: 2em;
+          margin-bottom: 1.5em;
+          font-weight: bold;
+        }
+
+        .description {
+          font-style: italic;
+          font-size: 11pt;
+          height: 3em;
+          vertical-align: middle;
+          position: absolute;
+          line-height: 1.3em;
+          top: 50%;
+          width: stretch;
+          transform: translate(0, -50%);
+          padding: 2em;
+
+          @media (max-width: 1000px) {
+            font-size: 10pt;
+            padding: 5vw;
+          }
+        }
+
+        .controls {
+          margin-top: 1em;
+          font-size: 10pt;
+          text-decoration: underline;
+          position: absolute;
+          bottom: 2em;
+          left: 0;
+          text-align: center;
+          width: stretch;
+
+          a {
+            margin-right: 2em;
+            margin-left: 2em;
+          }
+        }
+      }
+    }
+  }
+}

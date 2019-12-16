@@ -11,26 +11,13 @@ export default function Auth0Row ({ service, onAuthStateChange }) {
     setAuthenticated(!!authState)
   }
 
-  function loggedInText () {
-    if (service.profile && service.profile.name) {
-      return `You are logged in as  ${service.profile.name}.`
-    }
-    return 'You are logged in.'
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className='auth-row'>
-        <div>You are not logged in.</div>
-        <LoginButton service={service} handleAuthChange={handleAuthChange} />
-      </div>
-    )
+  function renderButton () {
+    return (isAuthenticated)
+      ? <LogoutButton service={service} handleAuthChange={handleAuthChange} />
+      : <LoginButton service={service} handleAuthChange={handleAuthChange} />
   }
 
   return (
-    <div className='auth-row'>
-      <div>{loggedInText()}</div>
-      <LogoutButton service={service} handleAuthChange={handleAuthChange} />
-    </div>
+    <div className='auth-row'>{renderButton()}</div>
   )
 }

@@ -1,4 +1,4 @@
-import { config } from './auth0.config.js'
+import { config } from './auth/auth0.config.js'
 import auth0 from 'auth0-js'
 const FailedToAuthenticate = 'Attempted to authenticate, but the Auth0 Lock returned an invalid result'
 const CalledWithoutValidState = 'Attempted to call the API in an authenticated manner without a valid authentication state'

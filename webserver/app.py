@@ -11,7 +11,7 @@ SHOULD_SERVE_STATIC = os.environ.get('SHOULD_SERVE_STATIC', False)
 
 def get_app_type():
     if SHOULD_SERVE_STATIC:
-        return Flask(__name__, static_folder='../build/static', template_folder="../build")
+        return Flask(__name__, static_folder='../build/static', template_folder='../build')
     return Flask(__name__)
 
 
