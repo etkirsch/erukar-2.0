@@ -7,10 +7,23 @@
   height: 100%;
   transform: translateX(-320px);
   transition: 200ms all;
-  padding-top: 50px;
+  z-index: 2;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    transform: translateX(-100%);
+  }
 
   &.is-open {
     transform: translateX(0);
+  }
+
+  .header {
+    color: black;
+    height: 50px;
+    width: stretch;
+    font-size: 18pt;
+    line-height: 50px;
   }
 
   .row {
@@ -18,17 +31,20 @@
     height: 64px;
     text-align: center;
     position: relative;
+    text-decoration: none;
 
     &:hover {
       background: lightgreen;
       cursor: pointer;
+      text-decoration: underline;
     }
 
     a {
       line-height: 64px;
-      font-size: 14pt;
+      font-size: 12pt;
       color: black;
       text-transform: uppercase;
+      text-decoration: inherit;
     }
   }
 }

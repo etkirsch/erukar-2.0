@@ -31,6 +31,7 @@ export default function SidePanel ({ isOpen, profile, contentSegments=DefaultCon
 
   return (
     <div className={sidePanelClass(isOpen)}>
+      <div className='header'>Erukar 2.0</div>
       {profileContents.map((content, i) => {
         const key = `side-panel-row-element-${i}`
         return <SidePanelRow key={key} content={content} />
