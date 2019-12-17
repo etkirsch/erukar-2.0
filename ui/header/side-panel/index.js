@@ -1,7 +1,7 @@
 import React from 'react'
 import SidePanelRow from './row'
 import './side-panel.scss'
-import { filterAuthenticationRequired } from './contents-builder'
+import { filterContents } from './contents-builder'
 
 export const DefaultContents = [
   { 
@@ -29,7 +29,7 @@ export function sidePanelClass (isOpen) {
 }
 
 export default function SidePanel ({ isOpen, profile, contents=DefaultContents }) {
-  let profileContents = filterAuthenticationRequired({ contents, profile })
+  let profileContents = filterContents({ contents, profile })
 
   return (
     <div className={sidePanelClass(isOpen)}>
