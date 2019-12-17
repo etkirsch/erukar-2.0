@@ -14,12 +14,14 @@ header {
     display: block;
     left: 0;
     font-size: 14pt;
-    padding: 13px;
+    padding: 14px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 3;
 
     &:hover {
       background-color: #1b1b1b;
+      cursor: pointer;
     }
 
     svg {
@@ -27,8 +29,13 @@ header {
     }
 
     &.rotated {
+      color: black;
       svg {
         transform: rotate(90deg);
+      }
+
+      &:hover {
+        background: whitesmoke;
       }
     }
   }
@@ -37,6 +44,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 1;
   }
 
   .title {
