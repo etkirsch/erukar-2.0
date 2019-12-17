@@ -1,25 +1,23 @@
 import React from 'react'
 import SidePanelRow from './row'
 import './side-panel.scss'
-import { filterContents } from './contents-builder'
+import { buildSidePanelContents } from './contents-builder'
 
-export const DefaultContents = [
-  { 
+const DefaultContentSegments = [
+  [{ 
     name: 'Home'
-  }, {
-    name: 'Campaign Planner'
+  }], [{
+    name: 'Campaigns'
   }, {
     name: 'Legends of Erukar',
     requiresAuthentication: true,
     requiresLegendsActivation: true
   }, {
-    name: 'Divine Fonts'
-  }, {
-    name: 'Eikalan Lore'
+    name: 'Eikalis Lore'
   }, {
     name: 'Account Management',
     requiresAuthentication: true
-  }
+  }]
 ]
 
 export function sidePanelClass (isOpen) {
@@ -28,8 +26,8 @@ export function sidePanelClass (isOpen) {
     : 'side-panel'
 }
 
-export default function SidePanel ({ isOpen, profile, contents=DefaultContents }) {
-  let profileContents = filterContents({ contents, profile })
+export default function SidePanel ({ isOpen, profile, contentSegments=DefaultContentSegments }) {
+  let profileContents = buildSidePanelContents({ contentSegments , profile })
 
   return (
     <div className={sidePanelClass(isOpen)}>
