@@ -17,6 +17,7 @@ export default function CampaignExplorer () {
     description: 'In the fourth century of the Thaedoth Theocratic Imperium, settlers struggle to survive onthe outskirts of imperial rule. Tensions run high as Kholtea and Valorisia each set their sights on the Edras region.',
     upcomingEpisode: {
       title: 'Prickard\'s Quarrel',
+      date: '2019-12-04T22:36:08.821Z',
       description: 'The Prickard Mine falls into chaos admist strikes and sabotage'
     }
   }, {
@@ -24,6 +25,7 @@ export default function CampaignExplorer () {
     description: 'An ancient evil has reappeared after nearly two millennia. The future of society hangs on the actions of our heroes.',
     upcomingEpisode: {
       title: 'The Fall of Heck',
+      date: '2019-12-09T22:36:08.821Z',
       description: 'This is not actually a real episode.'
     }
    }]
