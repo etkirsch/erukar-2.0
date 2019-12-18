@@ -11,7 +11,7 @@ const testContent = [{
 describe ('basic tests', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ContentArea suggestions={testContent} />, div);
+    ReactDOM.render(<ContentArea content={testContent} />, div);
     ReactDOM.unmountComponentAtNode(div);
   })
 })

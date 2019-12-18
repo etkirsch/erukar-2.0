@@ -1,14 +1,19 @@
 import React from 'react'
 import ContentRow from './row'
 import { segmentSuggestions } from './segmenter'
+import './content-area.scss'
 
-export default function LandingContentArea ({ suggestions }) {
+export default function LandingContentArea ({ content }) {
+  if (!content || content.length === 0) {
+    return <div />
+  }
+
   return (
     <div className='content-area'>
-      {segmentSuggestions(suggestions).map((segment, i) => {
+      {segmentSuggestions(content).map((segment, i) => {
         return <ContentRow
           key={`landing-content-row-${i}`}
-          suggestions={segment}
+          content={segment}
           className='content-row' />
       })}
     </div>

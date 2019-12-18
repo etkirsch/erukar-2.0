@@ -1,13 +1,13 @@
 import React from 'react'
 import ContentItem from './item'
 
-export default function LandingContentRow ({ suggestions }) {
+export default function LandingContentRow ({ content }) {
   return (
     <div className='content-row'>
-      {suggestions.map((content, i) => {
+      {content.map((c, i) => {
         return <ContentItem
           key={`landing-content-row-item-${i}`}
-          content={content}
+          content={c}
           className='element' />
       })}
     </div>

@@ -1,0 +1,119 @@
+.campaign-explorer {
+  color: black;
+  width: 100%;
+
+  .content-area {
+    .content-row {
+      .content-item {
+        margin: 4vw;
+        height: 20vh;
+      }
+    }
+  }
+
+  .campaigns {
+    .campaign-at-a-glance {
+      margin-bottom: 2em;
+      width: stretch;
+      margin-left: 15vw;
+      margin-right: 15vw;
+      display: flex;
+      font-size: 14pt;
+      height: 16em;
+      background: #1b1b1b;
+      color: white;
+
+      .left {
+        flex: 2;
+        padding: 1em;
+        position: relative;
+        border-right: 1px solid white;
+
+        .title {
+          margin-top: 2em;
+          font-weight: bold;
+          font-size: 18pt;
+        }
+
+        .description {
+          line-height: 1.5em;
+          font-size: 11pt;
+          font-style: italic;
+          height: 3em;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        .controls {
+          position: absolute;
+          bottom: 2em;
+          width: stretch;
+          font-size: 12pt;
+          justify-content: center;
+        }
+      }
+
+      .right {
+        flex: 1;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        position: relative;
+
+        .next-episode {
+          position: absolute;
+          padding: 1em;
+          width: stretch;
+          top: 0;
+          bottom: 3em;
+          border-bottom: 1px solid white;
+
+          .content {
+            position: relative;
+            width: stretch;
+            height: 100%;
+            top: 0;
+
+            .title {
+              transform: translate(0, 1em);
+              font-weight: bold;
+              font-size: 14pt;
+            }
+
+            .description {
+              font-size: 10pt;
+              line-height: 1.4em;
+              position: absolute;
+              font-style: italic;
+              top: 50%;
+              transform: translate(0, -50%);
+              width: stretch;
+            }
+
+            .controls {
+              width: stretch;
+              font-size: 11pt;
+              position: absolute;
+              bottom: 2em;
+            }
+          }
+        }
+
+        .all-episodes {
+          position: absolute;
+          height: 2em;
+          line-height: 2em;
+          bottom: 0;
+          width: stretch;
+
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingContentArea from './content/area'
+import ContentArea from '../content/area'
 import UpcomingEpisode from './upcoming-episode'
 import './landing.scss' 
 
@@ -59,7 +59,7 @@ export default function LandingPage () {
       <div className='artwork' style={{backgroundImage: 'url(/static/images/ashta-example.jpg)'}}>
         <UpcomingEpisode episode={episode} />
       </div>
-      <LandingContentArea suggestions={contentSuggestions} />
+      <ContentArea content={contentSuggestions} />
     </div>
   )
 }

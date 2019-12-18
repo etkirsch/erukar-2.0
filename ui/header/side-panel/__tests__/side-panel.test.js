@@ -192,6 +192,14 @@ describe ('Side Panel', () => {
       })
     })
 
+    describe('mapCampaignToRoute', () => {
+      it('sets a campaign\'s route appropriately', () => {
+        const testId = 'test-id'
+        let result = methods.mapCampaignToRoute({ id: testId })
+        expect(result.route).toEqual(`/campaigns/${testId}`)
+      })
+    })
+
     describe('buildSidePanelContents', () => {
       it('filters auth-required and legends if profile does not exist', () => {
         let result = methods.buildSidePanelContents({ contentSegments })
