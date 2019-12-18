@@ -5,18 +5,23 @@ import { buildSidePanelContents } from './contents-builder'
 
 const DefaultContentSegments = [
   [{ 
-    name: 'Home'
+    name: 'Home',
+    route: '/'
   }], [{
-    name: 'Campaigns'
+    name: 'Campaigns',
+    route: '/campaigns'
   }, {
     name: 'Legends of Erukar',
     requiresAuthentication: true,
-    requiresLegendsActivation: true
+    requiresLegendsActivation: true,
+    route: '/'
   }, {
-    name: 'Eikalis Lore'
+    name: 'Eikalis Lore',
+    route: '/'
   }, {
     name: 'Account Management',
-    requiresAuthentication: true
+    requiresAuthentication: true,
+    route: '/'
   }]
 ]
 

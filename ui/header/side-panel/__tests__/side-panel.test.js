@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 import SidePanel, { DefaultContents, sidePanelClass } from '../index';
 import * as methods from '../contents-builder'
 
@@ -13,13 +14,13 @@ describe ('Side Panel', () => {
   describe('rendering', () => {
     it('renders without crashing', () => {
       const div = document.createElement('div');
-      ReactDOM.render(<SidePanel profile={defaultProfile} isOpen={false} />, div);
+      ReactDOM.render(<Router><SidePanel profile={defaultProfile} isOpen={false} /></Router>, div);
       ReactDOM.unmountComponentAtNode(div);
     })
 
     it('renders opened without crashing', () => {
       const div = document.createElement('div');
-      ReactDOM.render(<SidePanel profile={defaultProfile} isOpen={true} />, div);
+      ReactDOM.render(<Router><SidePanel profile={defaultProfile} isOpen={true} /></Router>, div);
       ReactDOM.unmountComponentAtNode(div);
     })
   })

@@ -3,11 +3,11 @@ import ApiService from './ApiService'
 import AuthenticationService from './AuthService'
 import Header from './header'
 import Landing from './landing'
+import CampaignExplorer from './campaigns'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom"
 import './App.scss';
 
@@ -28,7 +28,10 @@ function App() {
   function renderRoutes () {
     return (
       <Switch>
-        <Route jath="/">
+        <Route path="/campaigns">
+          <CampaignExplorer />
+        </Route>
+        <Route path="/">
           <Landing />
         </Route>
       </Switch>
