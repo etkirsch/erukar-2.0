@@ -3,6 +3,12 @@ import ApiService from './ApiService'
 import AuthenticationService from './AuthService'
 import Header from './header'
 import Landing from './landing'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 import './App.scss';
 
 const apiService = new ApiService() 
@@ -19,13 +25,25 @@ function App() {
     setAuthenticated(!!authState)
   }
 
+  function renderRoutes () {
+    return (
+      <Switch>
+        <Route jath="/">
+          <Landing />
+        </Route>
+      </Switch>
+    )
+  }
+
   return (
-    <div className="App">
-      <Header authService={authService} onAuthStateChange={onAuthStateChange} />
-      <div className='main'>
-        <Landing />
+    <Router>
+      <div className="App">
+        <Header authService={authService} onAuthStateChange={onAuthStateChange} />
+        <div className='main'>
+          {renderRoutes()}
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
