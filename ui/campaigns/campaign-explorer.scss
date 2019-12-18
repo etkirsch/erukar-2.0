@@ -3,6 +3,7 @@
   width: 100%;
 
   .content-area {
+    margin-bottom: 0;
     .content-row {
       .content-item {
         height: 20vh;
@@ -36,7 +37,7 @@
         margin-bottom: 1em;
       }
 
-      .left {
+      .overview {
         padding: 1em;
         position: relative;
         display: block;

@@ -9,7 +9,7 @@ export default function UpcomingEpisode ({ episode }) {
   function atAGlance () {
     let date = new Date(episode.date).toDateString()
 
-    return `${date} / ${episode.characters.length} players enrolled`
+    return `${date}, ${episode.characters.length} players enrolled`
   }
 
   return (
