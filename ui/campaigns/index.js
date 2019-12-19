@@ -21,7 +21,7 @@ export default function CampaignExplorer () {
       text: 'Learn More',
       route: '/help/join-campaign'
     }, {
-      text: 'Create',
+      text: 'Join',
       route: '/campaigns/explore'
     }]
   }]
@@ -71,14 +71,39 @@ export default function CampaignExplorer () {
         player: { name: 'Will', id: -1 }
       }]
     }
+  }, {
+    name: 'Consultants and Dragons',
+    description: 'The first campaign within the world of Eikalis',
+    upcomingEpisode: {
+      title: 'Kingsday',
+      date: '2019-12-09T22:36:08.821Z',
+      description: 'This is not actually a real episode.',
+      level: 4,
+      characters: [{
+        id: -1,
+        name: 'Tycho',
+        level: 4,
+        player: { name: 'Frank', id: -1 }
+      }, {
+        id: -1,
+        name: 'Larry',
+        level: 6,
+        player: { name: 'Larry', id: -1 }
+      }, {
+        id: -1,
+        name: 'Red',
+        level: 6,
+        player: { name: 'Will', id: -1 }
+      }]
+    }
    }]
 
   return (
     <div className='campaign-explorer'>
-      <ContentArea content={content} />
       <div className='campaigns'>
         {campaigns.map(campaign => <CampaignAtAGlance campaign={campaign} />)}
       </div>
+      <ContentArea content={content} />
     </div>
   )
 }
