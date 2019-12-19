@@ -29,6 +29,9 @@ export default function CampaignExplorer () {
    const campaigns = [{
     name: 'The History of Edraston',
     description: 'In the fourth century of the Thaedoth Theocratic Imperium, settlers struggle to survive on the outskirts of imperial rule. Tensions run high as Kholtea and Valorisia each set their sights on the Edras region.',
+    artwork: [
+      '/static/images/ashta-example.jpg'
+    ],
     upcomingEpisode: {
       title: 'Prickard\'s Quarrel',
       date: '2019-12-04T22:36:08.821Z',
@@ -49,59 +52,23 @@ export default function CampaignExplorer () {
   }, {
     name: 'The Second Scourge',
     description: 'An ancient evil has reappeared after nearly two millennia. The future of society hangs on the actions of our heroes.',
-    upcomingEpisode: {
-      title: 'The Fall of Heck',
-      date: '2019-12-09T22:36:08.821Z',
-      description: 'This is not actually a real episode.',
-      level: 4,
-      characters: [{
-        id: -1,
-        name: 'Tycho',
-        level: 4,
-        player: { name: 'Frank', id: -1 }
-      }, {
-        id: -1,
-        name: 'Larry',
-        level: 6,
-        player: { name: 'Larry', id: -1 }
-      }, {
-        id: -1,
-        name: 'Red',
-        level: 6,
-        player: { name: 'Will', id: -1 }
-      }]
-    }
+    hasCompleted: true,
+    artwork: [
+      '/static/images/ygdiras-example.jpg'
+    ]
   }, {
     name: 'Consultants and Dragons',
     description: 'The first campaign within the world of Eikalis',
-    upcomingEpisode: {
-      title: 'Kingsday',
-      date: '2019-12-09T22:36:08.821Z',
-      description: 'This is not actually a real episode.',
-      level: 4,
-      characters: [{
-        id: -1,
-        name: 'Tycho',
-        level: 4,
-        player: { name: 'Frank', id: -1 }
-      }, {
-        id: -1,
-        name: 'Larry',
-        level: 6,
-        player: { name: 'Larry', id: -1 }
-      }, {
-        id: -1,
-        name: 'Red',
-        level: 6,
-        player: { name: 'Will', id: -1 }
-      }]
-    }
-   }]
+    hasCompleted: true,
+    artwork: [
+      '/static/images/shamradaer-example.png'
+    ]
+  }]
 
   return (
     <div className='campaign-explorer'>
       <div className='campaigns'>
-        {campaigns.map(campaign => <CampaignAtAGlance campaign={campaign} />)}
+        {campaigns.map((campaign, i) => <CampaignAtAGlance campaign={campaign} invert={i%2}/>)}
       </div>
       <ContentArea content={content} />
     </div>
