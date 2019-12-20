@@ -1,6 +1,6 @@
 import React from 'react'
 import ContentArea from '../content/area'
-import CampaignAtAGlance from './at-a-glance'
+import CampaignAtAGlance from './preview'
 import './campaign-explorer.scss'
 
 export default function CampaignExplorer () {
