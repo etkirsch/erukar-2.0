@@ -15,8 +15,15 @@ export function filterContents ({ contents, profile }) {
 
 export function profileCampaigns (profile) {
   return !!profile && !!profile.campaigns
-    ? profile.campaigns
+    ? profile.campaigns.map(mapCampaignToRoute)
     : []
+}
+
+export function mapCampaignToRoute (campaign) {
+  return {
+    ...campaign,
+    route: `/campaigns/${campaign.id}`
+  }
 }
 
 export function createContents ({ contentSegments, profile }) {

@@ -5,18 +5,23 @@ import { buildSidePanelContents } from './contents-builder'
 
 const DefaultContentSegments = [
   [{ 
-    name: 'Home'
+    name: 'Home',
+    route: '/'
   }], [{
-    name: 'Campaigns'
+    name: 'Campaigns',
+    route: '/campaigns'
   }, {
     name: 'Legends of Erukar',
     requiresAuthentication: true,
-    requiresLegendsActivation: true
+    requiresLegendsActivation: true,
+    route: '/'
   }, {
-    name: 'Eikalis Lore'
+    name: 'Eikalis Lore',
+    route: '/'
   }, {
     name: 'Account Management',
-    requiresAuthentication: true
+    requiresAuthentication: true,
+    route: '/'
   }]
 ]
 
@@ -26,15 +31,15 @@ export function sidePanelClass (isOpen) {
     : 'side-panel'
 }
 
-export default function SidePanel ({ isOpen, profile, contentSegments=DefaultContentSegments }) {
-  let profileContents = buildSidePanelContents({ contentSegments , profile })
+export default function SidePanel ({ isOpen, profile, closeSidePanel, contentSegments=DefaultContentSegments }) {
+  let profileContents = buildSidePanelContents({ contentSegments, profile })
 
   return (
     <div className={sidePanelClass(isOpen)}>
       <div className='header'>Erukar 2.0</div>
       {profileContents.map((content, i) => {
         const key = `side-panel-row-element-${i}`
-        return <SidePanelRow key={key} content={content} />
+        return <SidePanelRow key={key} content={content} onClick={closeSidePanel} />
       })}
     </div>
   )

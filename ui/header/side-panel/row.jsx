@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function SidePanelRow ({ content }) {
+export default function SidePanelRow ({ content, onClick }) {
   return (
     <div className='row'>
-      <a href="/">{content.name}</a>
+      <Link onClick={onClick} to={content.route}>{content.name}</Link>
     </div>
   )
 }

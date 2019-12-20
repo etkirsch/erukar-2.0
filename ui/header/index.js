@@ -29,7 +29,7 @@ export default function Header ({ authService, onAuthStateChange }) {
 
   return (
     <header>
-      <SidePanel profile={profile} isOpen={isSidebarOpen} />
+      <SidePanel closeSidePanel={() => setSidebarOpen(false)} profile={profile} isOpen={isSidebarOpen} />
       <div className={hamburgerClass} onClick={hamburgerClick}>
         <FontAwesomeIcon icon="bars" />
       </div>
