@@ -33,6 +33,9 @@ export default function CampaignExplorer ({ campaigns }) {
 
   return (
     <div className='campaign-explorer'>
+      <div className='page-title'>
+        Highlighted Campaigns
+      </div>
       <div className='campaigns'>
         {campaigns.map((campaign, i) => {
           let key = `campaign-explorer-preview-${i}`
