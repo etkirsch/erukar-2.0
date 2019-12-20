@@ -19,23 +19,23 @@
           .next-episode {
             padding: 1em;
             border-top: 1px solid white;
+            bottom: 3em;
 
             @media (max-width: 1000px) {
               display: none;
             }
 
-            @media (min-width: 1001px) {
-              bottom: 3em;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+              background: #212121;
             }
 
             .content {
               width: stretch;
-
-              @media (min-width: 1001px) {
-                position: relative;
-                top: 0;
-                height: 100%;
-              }
+              position: relative;
+              top: 0;
+              height: 100%;
 
               .title {
                 font-weight: bold;
@@ -43,13 +43,9 @@
               }
 
               .date {
-                margin-top: 0.5em;
+                margin-top: 0.25em;
                 font-size: 9pt;
                 font-style: italic;
-
-                @media (max-width: 1000px) {
-                  margin-top: 0.5em;
-                }
               }
 
               .description {
@@ -57,11 +53,7 @@
                 line-height: 1.4em;
                 font-style: italic;
                 width: stretch;
-
-                @media (max-width: 1000px) {
-                  margin-top: 1.5em;
-                  margin-bottom: 1em;
-                }
+                margin-top: 0.5em;
               }
 
               .controls {
