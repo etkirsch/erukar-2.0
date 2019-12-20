@@ -54,7 +54,8 @@
         margin-top: 2em;
 
         @media (max-width: 1000px) {
-          display: block;
+          display: flex;
+          flex-direction: column;
           margin-top: 0;
           margin-bottom: 1em;
         }
@@ -73,6 +74,7 @@
           @media (max-width: 1000px) {
             min-height: 8em;
             border-bottom: 1px solid white;
+            order: 2;
           }
 
           .title {
@@ -81,7 +83,7 @@
             font-size: 18pt;
 
             @media (max-width: 1000px) {
-              margin-top: 0.5em;
+              margin-top: 1.5em;
               font-size: 16pt;
               margin-bottom: 1em;
             }
@@ -105,8 +107,8 @@
               display: block;
               font-size: 10pt;
               margin-bottom: 1em;
-              padding-left: 2vw;
-              padding-right: 2vw;
+              padding-left: 3vw;
+              padding-right: 3vw;
             }
           }
 
@@ -115,29 +117,41 @@
             font-size: 12pt;
             justify-content: center;
 
+            @media (max-width: 1000px) {
+              margin-bottom: 1.5em;
+              margin-top: 1.5em;
+              display: block;
+            }
+
             @media (min-width: 1001px) {
               position: absolute;
               bottom: 2em;
+            }
 
-              a {
+            a {
+              @media (max-width: 1000px) {
+                display: block;
+                line-height: 2em;
+              }
+              @media (min-width: 1001px) {
                 margin-left: 2em;
                 margin-right: 2em;
 
-                svg {
-                  margin-right: 8px;
-                }
               }
-            }
 
-            @media (max-width: 1000px) {
-              margin-top: 1.5em;
-              display: block;
+              svg {
+                margin-right: 8px;
+              }
             }
           }
         }
 
         .art-episode-container {
           flex: 1;
+
+          @media (max-width: 1000px) {
+            order: 1;
+          }
 
           .artwork {
             height:16em;
@@ -149,6 +163,10 @@
           .next-episode {
             padding: 1em;
             border-top: 1px solid white;
+
+            @media (max-width: 1000px) {
+              display: none;
+            }
 
             @media (min-width: 1001px) {
               bottom: 3em;
@@ -194,24 +212,6 @@
                 width: stretch;
                 font-size: 10pt;
               }
-            }
-          }
-
-          .all-episodes {
-            flex: 1;
-            bottom: 0;
-            line-height: 6em;
-            height: 6em;
-
-            @media (max-width: 1000px) {
-              font-size: 12pt;
-              height: 2.5em;
-              line-height: 2.5em;
-            }
-
-            &:hover {
-              text-decoration: underline;
-              cursor: pointer;
             }
           }
         }
