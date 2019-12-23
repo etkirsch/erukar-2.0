@@ -12,7 +12,7 @@ export default function CampaignOverview ({ campaign }) {
 
   return (
     <div className='overview'>
-      <div className='title'>{campaign.name}</div>
+      <div className='title'>{campaign.title}</div>
       <div className='description'>{campaign.description}</div>
       <div className='controls'>
         <a href="/">{summaryDescription}</a>

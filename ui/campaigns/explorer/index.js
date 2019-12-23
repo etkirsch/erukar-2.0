@@ -1,5 +1,5 @@
 import React from 'react'
-import ContentArea from '../content/area'
+import ContentArea from '../../content/area'
 import CampaignPreview from './preview'
 import './campaign-explorer.scss'
 

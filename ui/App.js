@@ -3,7 +3,8 @@ import ApiService from './ApiService'
 import AuthenticationService from './AuthService'
 import Header from './header'
 import Landing from './landing'
-import CampaignExplorer from './campaigns'
+import CampaignExplorer from './campaigns/explorer'
+import CampaignViewer from './campaigns/viewer'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,7 +17,9 @@ const authService = new AuthenticationService(apiService)
 authService.restoreExistingState()
 
 const testCampaigns = [{
-    name: 'The History of Edraston',
+    id: 'the-history-of-edraston',
+    title: 'The History of Edraston',
+    gm: 'Evan Kirsch',
     description: 'In the fourth century of the Thaedoth Theocratic Imperium, settlers struggle to survive on the outskirts of imperial rule. Tensions run high as Kholtea and Valorisia each set their sights on the Edras region.',
     artwork: [
       '/static/images/ashta-example.jpg'
@@ -24,6 +27,7 @@ const testCampaigns = [{
     upcomingEpisode: {
       title: 'Prickard\'s Quarrel',
       date: '2019-12-04T22:36:08.821Z',
+      gm: 'Evan Kirsch',
       description: 'The Prickard Mine falls into chaos admist strikes and sabotage',
       level: 4,
       characters: [{
@@ -39,14 +43,18 @@ const testCampaigns = [{
       }]
     }
   }, {
-    name: 'The Second Scourge',
+    id: 'the-second-scourge',
+    title: 'The Second Scourge',
+    gm: 'Evan Kirsch',
     description: 'An ancient evil has reappeared after nearly two millennia. The future of society hangs on the actions of our heroes.',
     hasCompleted: true,
     artwork: [
       '/static/images/ygdiras-example.jpg'
     ]
   }, {
-    name: 'Consultants and Dragons',
+    id: 'consultants-and-dragons',
+    title: 'Consultants and Dragons',
+    gm: 'Evan Kirsch',
     description: 'The first campaign within the world of Eikalis',
     hasCompleted: true,
     artwork: [
@@ -67,6 +75,9 @@ function App() {
   function renderRoutes () {
     return (
       <Switch>
+        <Route path="/campaigns/:id">
+          <CampaignViewer cache={testCampaigns} apiService={apiService} />
+        </Route>
         <Route path="/campaigns">
           <CampaignExplorer campaigns={testCampaigns} />
         </Route>
@@ -80,7 +91,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header authService={authService} onAuthStateChange={onAuthStateChange} />
+        <Header authService={authService} onAuthStateChange={onAuthStateChange} campaigns={testCampaigns} />
         <div className='main'>
           {renderRoutes()}
         </div>
