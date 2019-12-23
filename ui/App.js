@@ -79,7 +79,7 @@ function App() {
     return (
       <Switch>
         <Route path="/campaigns/:id">
-          <CampaignViewer cache={testCampaigns} apiService={apiService} />
+          <CampaignViewer cache={testCampaigns} />
         </Route>
         <Route path="/campaigns">
           <CampaignExplorer campaigns={testCampaigns} />
