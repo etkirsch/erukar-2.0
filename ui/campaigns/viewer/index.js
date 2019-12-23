@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import UpcomingEpisode from './upcoming-episode'
 import ViewerHeader from './header'
+import ViewerSummary from './summary'
 import NotFound from '../../errors/404'
 import './campaign-viewer.scss'
 
@@ -33,6 +34,7 @@ export default function CampaignViewer ({ apiService, cache=[] }) {
       <ViewerHeader campaign={campaign} />
       {campaign.upcomingEpisode && <UpcomingEpisode episode={campaign.upcomingEpisode} campaign={campaign} />}
       <div className='artwork' style={{backgroundImage: `url(${campaign.artwork[0]})`}} />
+      <ViewerSummary campaign={campaign} />
     </div>
   )
 }

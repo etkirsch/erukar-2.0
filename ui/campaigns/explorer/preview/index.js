@@ -2,7 +2,7 @@ import React from 'react'
 import CampaignOverview from './overview'
 import UpcomingEpisode from './upcoming-episode'
 
-export default function CampaignAtAGlance ({ campaign, invert=false }) {
+export default function CampaignPreview ({ campaign, invert=false }) {
   function overview () {
     return <CampaignOverview campaign={campaign} />
   }

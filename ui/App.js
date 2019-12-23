@@ -20,7 +20,8 @@ const testCampaigns = [{
     id: 'the-history-of-edraston',
     title: 'The History of Edraston',
     gm: 'Evan Kirsch',
-    description: 'In the fourth century of the Thaedoth Theocratic Imperium, settlers struggle to survive on the outskirts of imperial rule. Tensions run high as Kholtea and Valorisia each set their sights on the Edras region.',
+    description: 'A sandbox campaign set in the fourth century of the Thaedoth Theocratic Imperium',
+    summary: '381, Thaedoth Era. Settlers flock to the Mt. Edras region following the discovery of a black crystal called "Salericite". The demand for Salericite skyrocketed overnight, causing an influx of fortune-seekers and career criminals. A settlement has started between the Edras and Prickard Mines. ',
     artwork: [
       '/static/images/ashta-example.jpg'
     ],
@@ -47,6 +48,7 @@ const testCampaigns = [{
     title: 'The Second Scourge',
     gm: 'Evan Kirsch',
     description: 'An ancient evil has reappeared after nearly two millennia. The future of society hangs on the actions of our heroes.',
+    summary: 'In 542 CA, Alacron Draume, the High Justice of the Kingdom of Iuria, established a small task force to investigate an entity deep beneath the Moq Sulhan mines. This entity was discovered to be the Prime Defiler Karravaska who almost nearly destroyed the world with the First Vrakk Scourge. The High Justice\'s brother Rathod set Karravaska free, and the task force stepped up to stop the Second Scourge.',
     hasCompleted: true,
     artwork: [
       '/static/images/ygdiras-example.jpg'
@@ -56,6 +58,7 @@ const testCampaigns = [{
     title: 'Consultants and Dragons',
     gm: 'Evan Kirsch',
     description: 'The first campaign within the world of Eikalis',
+    summary: 'The adventuring guild known as \'Consultants and Dragons\' was formed in Barlen, Iuria, by the retired Archmage Vorenus Magnus. Hijinks ensued, as the Consultants staged (failed) heists and expeditions into the no-man\'s-land, Erukar. This campaign concluded when the King of Iuria Riphel II was assassinated in Luinden on Kingsday, sparking the resistance war called the Iurian Reclamation.',
     hasCompleted: true,
     artwork: [
       '/static/images/shamradaer-example.png'
