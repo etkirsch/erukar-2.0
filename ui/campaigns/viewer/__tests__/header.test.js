@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Landing from '../index.js'
+import Header from '../header'
 
 const testCampaign = {
   id: 'the-history-of-edraston',
@@ -37,7 +37,7 @@ describe ('basic tests', () => {
     const div = document.createElement('div')
     ReactDOM.render((
       <Router>
-        <Landing campaign={testCampaign} upcomingEpisode={testCampaign.upcomingEpisode} />
+        <Header campaign={testCampaign} />
       </Router>
     ), div)
     ReactDOM.unmountComponentAtNode(div)

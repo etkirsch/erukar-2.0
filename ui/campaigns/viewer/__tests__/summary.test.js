@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Landing from '../index.js'
+import Summary from '../summary'
 
 const testCampaign = {
   id: 'the-history-of-edraston',
@@ -33,11 +33,21 @@ const testCampaign = {
 }
 
 describe ('basic tests', () => {
-  it('renders without crashing', () => {
+  it('renders with a summary without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render((
       <Router>
-        <Landing campaign={testCampaign} upcomingEpisode={testCampaign.upcomingEpisode} />
+        <Summary campaign={testCampaign} />
+      </Router>
+    ), div)
+    ReactDOM.unmountComponentAtNode(div)
+  })
+
+  it('renders without a summary without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render((
+      <Router>
+        <Summary campaign={{}} />
       </Router>
     ), div)
     ReactDOM.unmountComponentAtNode(div)

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function CampaignOverview ({ campaign }) {
@@ -12,10 +13,10 @@ export default function CampaignOverview ({ campaign }) {
 
   return (
     <div className='overview'>
-      <div className='title'>{campaign.name}</div>
+      <div className='title'>{campaign.title}</div>
       <div className='description'>{campaign.description}</div>
       <div className='controls'>
-        <a href="/">{summaryDescription}</a>
+        <Link to={`/campaigns/${campaign.id}`}>{summaryDescription}</Link>
         {episodes}
         <a href="/">Dramatis Personae</a>
       </div>

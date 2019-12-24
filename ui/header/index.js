@@ -8,20 +8,20 @@ const profile = {
   name: 'Frank',
   config: {
     hasDisabledLegends: true
-  },
-  campaigns : [{
-    name: 'A History of Edraston',
-    id: 'campaign-1'
-  }, {
-    name: 'The Second Scourge',
-    id: 'campaign-2'
-  }]
+  }
 }
 
-export default function Header ({ authService, onAuthStateChange }) {
+export default function Header ({ authService, campaigns, onAuthStateChange }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
-
   const hamburgerClass = `hamburger${isSidebarOpen ? ' rotated': ''}`
+
+  let profileWithCampaigns = {
+    ...profile,
+    campaigns: campaigns.map((campaign) => ({
+      id: campaign.id,
+      name: campaign.title
+    }))
+  }
 
   function hamburgerClick () {
     setSidebarOpen(!isSidebarOpen)
@@ -29,7 +29,7 @@ export default function Header ({ authService, onAuthStateChange }) {
 
   return (
     <header>
-      <SidePanel closeSidePanel={() => setSidebarOpen(false)} profile={profile} isOpen={isSidebarOpen} />
+      <SidePanel closeSidePanel={() => setSidebarOpen(false)} profile={profileWithCampaigns} isOpen={isSidebarOpen} />
       <div className={hamburgerClass} onClick={hamburgerClick}>
         <FontAwesomeIcon icon="bars" />
       </div>

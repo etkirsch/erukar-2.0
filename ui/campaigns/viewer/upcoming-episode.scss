@@ -1,0 +1,65 @@
+.campaign-viewer {
+  .upcoming-episode {
+    background: #1b1b1b;
+    width: stretch;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    color: ghostwhite;
+    margin-bottom: 2em;
+    font-size: 12pt;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .5);
+
+    @media (max-width: 1000px) {
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      font-size: 10pt;
+    }
+
+    .title {
+      font-size: 18pt;
+      font-weight: bold;
+
+      @media (max-width: 1000px) {
+        font-size: 14pt;
+      }
+    }
+
+    .preview {
+      font-style: italic;
+      font-size: 11pt;
+      margin-bottom: 1em;
+
+      @media (max-width: 1000px) {
+        font-size: 9pt;
+      }
+    }
+
+    .description {
+      margin-bottom: 1.5em;
+    }
+
+    .controls {
+      text-decoration: underline;
+      justify-content: center;
+      display: flex;
+
+      div {
+        margin-left: 1em;
+        margin-right: 1em;
+
+        @media (max-width: 1000px) {
+          margin-left: 2em;
+          margin-right: 2em;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: #dedede;
+        }
+      }
+    }
+  }
+}

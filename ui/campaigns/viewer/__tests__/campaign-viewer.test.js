@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Landing from '../index.js'
+import { MemoryRouter as Router } from 'react-router-dom'
+import CampaignViewer from '../index'
 
 const testCampaign = {
   id: 'the-history-of-edraston',
@@ -33,11 +33,11 @@ const testCampaign = {
 }
 
 describe ('basic tests', () => {
-  it('renders without crashing', () => {
+  it('renders with a campaign without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render((
-      <Router>
-        <Landing campaign={testCampaign} upcomingEpisode={testCampaign.upcomingEpisode} />
+      <Router initialEntries={["/campaigns/the-history-of-edraston"]}>
+        <CampaignViewer apiService={null} cache={[testCampaign]} />
       </Router>
     ), div)
     ReactDOM.unmountComponentAtNode(div)
