@@ -12,13 +12,13 @@
 
     .control {
       background: #1b1b1b;
-      font-size: 9pt;
+      font-size: 11pt;
       margin-left: 2em;
       margin-right: 2em;
       width: 10em;
       padding: 0.5em;
       color: white;
-      line-height: 16pt;
+      line-height: 20pt;
       font-weight: 400;
 
       &:hover {
@@ -29,6 +29,8 @@
       @media (max-width: 1000px) {
         margin-left: 1em;
         margin-right: 1em;
+        font-size: 9pt;
+        line-height: 16pt;
       }
     }
   }

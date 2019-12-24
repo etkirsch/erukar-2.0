@@ -8,6 +8,10 @@ export default function UpcomingEpisode ({ episode }) {
     return `${date}, ${episode.characters.length} players enrolled`
   }
 
+  if (!episode) {
+    return <div />
+  }
+
   return (
     <div className='upcoming-episode'>
       <div className='title'>Next Episode: {episode.title}</div>

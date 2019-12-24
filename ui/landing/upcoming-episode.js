@@ -4,13 +4,19 @@ import './upcoming-episode.scss'
 
 export default function UpcomingEpisode ({ campaign, episode }) {
   function title () {
-    return `${campaign.title}: ${episode.title}`
+    return (!!campaign)
+      ? `${campaign.title}: ${episode.title}`
+      : episode.title
   }
 
   function atAGlance () {
     let date = new Date(episode.date).toDateString()
 
     return `${date}, ${episode.characters.length} players enrolled`
+  }
+
+  if (!episode) {
+    return <div />
   }
 
   return (
@@ -20,7 +26,7 @@ export default function UpcomingEpisode ({ campaign, episode }) {
         <div className='title-bar'>{title()}</div>
         <div className='at-a-glance'>{atAGlance()}</div>
         <div className='controls'>
-          <Link to={`/campaigns/${campaign.id}`}>See Campaign</Link>
+          {campaign && <Link to={`/campaigns/${campaign.id}`}>See Campaign</Link>}
           <Link to='/'>Read More</Link>
           <Link to='/'>Join</Link>
         </div>
