@@ -85,7 +85,7 @@ function App() {
           <CampaignExplorer campaigns={testCampaigns} />
         </Route>
         <Route path="/">
-          <Landing />
+          <Landing campaign={testCampaigns[0]} upcomingEpisode={testCampaigns[0].upcomingEpisode} />
         </Route>
       </Switch>
     )

@@ -3,34 +3,7 @@ import ContentArea from '../content/area'
 import UpcomingEpisode from './upcoming-episode'
 import './landing.scss' 
 
-export default function LandingPage () {
-  const episode = {
-    campaign: {
-      title: 'The Second Scourge',
-      id: -1
-    },
-    id: -1,
-    title: 'The Fall of Heck',
-    date: '2019-12-09T22:36:08.821Z',
-    level: 4,
-    characters: [{
-      id: -1,
-      name: 'Tycho',
-      level: 4,
-      player: { name: 'Frank', id: -1 }
-    }, {
-      id: -1,
-      name: 'Larry',
-      level: 6,
-      player: { name: 'Larry', id: -1 }
-    }, {
-      id: -1,
-      name: 'Red',
-      level: 6,
-      player: { name: 'Will', id: -1 }
-    }]
-  }
-
+export default function LandingPage ({ campaign, upcomingEpisode }) {
   const contentSuggestions = [{
     title: 'Legends of Erukar',
     description: 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
@@ -64,7 +37,7 @@ export default function LandingPage () {
   return (
     <div className='landing-page'>
       <div className='artwork' style={{backgroundImage: 'url(/static/images/ashta-example.jpg)'}}>
-        <UpcomingEpisode episode={episode} />
+        <UpcomingEpisode episode={upcomingEpisode} campaign={campaign} />
       </div>
       <ContentArea content={contentSuggestions} />
     </div>

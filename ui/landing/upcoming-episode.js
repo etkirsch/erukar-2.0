@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './upcoming-episode.scss'
 
-export default function UpcomingEpisode ({ episode }) {
+export default function UpcomingEpisode ({ campaign, episode }) {
   function title () {
-    return `${episode.campaign.title}: ${episode.title}`
+    return `${campaign.title}: ${episode.title}`
   }
 
   function atAGlance () {
@@ -19,9 +20,9 @@ export default function UpcomingEpisode ({ episode }) {
         <div className='title-bar'>{title()}</div>
         <div className='at-a-glance'>{atAGlance()}</div>
         <div className='controls'>
-          <div>Dismiss</div>
-          <div>Read More</div>
-          <div>Join</div>
+          <Link to={`/campaigns/${campaign.id}`}>See Campaign</Link>
+          <Link to='/'>Read More</Link>
+          <Link to='/'>Join</Link>
         </div>
       </div>
     </div>
