@@ -5,6 +5,7 @@ import Header from './header'
 import Landing from './landing'
 import CampaignExplorer from './campaigns/explorer'
 import CampaignViewer from './campaigns/viewer'
+import EpisodeViewer from './episodes/viewer'
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,6 +17,29 @@ const apiService = new ApiService()
 const authService = new AuthenticationService(apiService) 
 authService.restoreExistingState()
 
+const testEpisodes = [{
+  id: 'prickards-quarrel',
+  title: 'Prickard\'s Quarrel',
+  date: '2019-12-04T22:36:08.821Z',
+  gm: 'Evan Kirsch',
+  description: 'The Prickard Mine falls into chaos admist strikes and sabotage',
+  artwork: [
+    '/static/images/parvion-example.png'
+  ],
+  level: 4,
+  characters: [{
+    id: -1,
+    name: 'Tycho',
+    level: 4,
+    player: { name: 'Frank', id: -1 }
+  }, {
+    id: -1,
+    name: 'Larry',
+    level: 6,
+    player: { name: 'Larry', id: -1 }
+  }]
+}]
+
 const testCampaigns = [{
     id: 'the-history-of-edraston',
     title: 'The History of Edraston',
@@ -26,10 +50,14 @@ const testCampaigns = [{
       '/static/images/ashta-example.jpg'
     ],
     upcomingEpisode: {
+      id: 'prickards-quarrel',
       title: 'Prickard\'s Quarrel',
       date: '2019-12-04T22:36:08.821Z',
       gm: 'Evan Kirsch',
       description: 'The Prickard Mine falls into chaos admist strikes and sabotage',
+      artwork: [
+        '/static/images/parvion-example.png'
+      ],
       level: 4,
       characters: [{
         id: -1,
@@ -83,6 +111,9 @@ function App() {
         </Route>
         <Route path="/campaigns">
           <CampaignExplorer campaigns={testCampaigns} />
+        </Route>
+        <Route path="/episodes/:episodeId">
+          <EpisodeViewer cache={testEpisodes} />
         </Route>
         <Route path="/">
           <Landing campaign={testCampaigns[0]} upcomingEpisode={testCampaigns[0].upcomingEpisode} />
