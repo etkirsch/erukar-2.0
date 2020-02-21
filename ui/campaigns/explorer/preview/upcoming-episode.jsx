@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function CampaignAtAGlanceUpcomingEpisode ({ campaign, episode }) {
   if (!episode) {
@@ -13,11 +14,13 @@ export default function CampaignAtAGlanceUpcomingEpisode ({ campaign, episode })
 
   return (
     <div className='next-episode'>
-      <div className='content'>
-        <div className='title'>Next Episode: {episode.title}</div>
-        <div className='date'>{summary} </div>
-        <div className='description'>{episode.description}</div>
-      </div>
+      <Link to={`/episodes/${episode.id}`}>
+        <div className='content'>
+          <div className='title'>Next Episode: {episode.title}</div>
+          <div className='date'>{summary} </div>
+          <div className='description'>{episode.description}</div>
+        </div>
+      </Link>
     </div>
   )
 }
