@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function EpisodeViewerSummary ({ episode }) {
-  if (!episode.summary || episode.summary.length < 0) {
+  if (!episode || !episode.summary || episode.summary.length < 0) {
     return <div />
   }
 
