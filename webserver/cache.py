@@ -34,35 +34,74 @@ topics = [{
     'friendly_id': 'the%20deceit%20of%20yzerbos'
 }]
 
-episodes = [{
-    'id': 'prickards-quarrel',
-    'title': 'Prickard\'s Quarrel',
-    'date': '2019-12-04T22:36:08.821Z',
-    'gm': 'Evan Kirsch',
-    'description': 'The Prickard Mine falls into chaos admist strikes and sabotage',
-    'summary': 'This is the summary for this episode.',
-    'artwork': [
-        '/static/images/parvion-example.png'
-    ],
-    'level': 4,
-    'characters': [{
-        'id': -1,
-        'name': 'Tycho',
+episodes = {
+    'prickards-quarrel': {
+        'id': 'prickards-quarrel', 
+        'title': 'Prickard\'s Quarrel',
+        'date': '2019-12-04T22:36:08.821Z',
+        'gm': 'Evan Kirsch',
+        'description': 'The Prickard Mine falls into chaos admist strikes and sabotage',
+        'summary': 'This is the summary for this episode.',
+        'artwork': [
+            '/static/images/parvion-example.png'
+        ],
         'level': 4,
-        'player': {
-            'name': 'Frank',
-            'id': -1
-        }
-    }, {
-        'id': -1,
-        'name': 'Larry',
-        'level': 6,
-        'player': {
+        'characters': [{
+            'id': -1,
+            'name': 'Tycho',
+            'level': 4,
+            'player': {
+                'name': 'Frank',
+                'id': -1
+            }
+        }, {
+            'id': -1,
             'name': 'Larry',
-            'id': -1
-        }
-    }]
-}]
+            'level': 6,
+            'player': {
+                'name': 'Larry',
+                'id': -1
+            }
+        }],
+    },
+    'the-first-episode': {
+        'id': 'the-first-episode',
+        'title': 'The First Episode',
+        'date': '2019-11-09T22:36:08.821Z',
+        'gm': 'Evan Kirsch',
+        'description': 'The party arrives to Edraston',
+        'summary': 'The players arrived at Edraston. Hijinks ensued, and the players went off to examine the Edras Mines. After some cautionary battling, the players cleared the Mine and returned triumphant.',
+        'artwork': [
+            '/static/images/parvion-example.png'
+        ],
+        'level': 4,
+        'characters': [{
+            'id': -1,
+            'name': 'Tycho',
+            'level': 4,
+            'player': {
+                'name': 'Frank',
+                'id': -1
+            }
+        }, {
+            'id': -1,
+            'name': 'Red',
+            'level': 3,
+            'player': {
+                'name': 'Reddington',
+                'id': -1
+            }
+        }, {
+            'id': -1,
+            'name': 'Larry',
+            'level': 6,
+            'player': {
+                'name': 'Larry',
+                'id': -1
+            }
+        }],
+    }
+}
 
 campaigns = [{
     'id': 'the-history-of-edraston',
@@ -73,7 +112,8 @@ campaigns = [{
     'artwork': [
         '/static/images/ashta-example.jpg'
     ],
-    'upcomingEpisode': 'prickards-quarrel'
+    'upcomingEpisode': 'prickards-quarrel',
+    'episodes': ['the-first-episode', 'prickards-quarrel']
 }, {
     'id': 'the-second-scourge',
     'title': 'The Second Scourge',
@@ -97,7 +137,7 @@ campaigns = [{
 }]
 
 random.shuffle(topics)
-validEpisodes = [x.get('upcomingEpisode', '') for x in campaigns if x.get('upcomingEpisode','') !=  ''],
+validEpisodes = [x.get('upcomingEpisode', '') for x in campaigns if x.get('upcomingEpisode','') != ''],
 
 fake_cache_data = {
     'episodes': episodes,

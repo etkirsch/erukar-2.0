@@ -29,7 +29,7 @@ export default function CampaignViewer ({ apiService, cache={} }) {
     return <NotFound id={id} type='campaign' />
   }
 
-  let upcomingEpisode = cache.episodes.find(ep => ep.id === campaign.upcomingEpisode)
+  let upcomingEpisode = cache.episodes[campaign.upcomingEpisode]
 
   return (
     <div className='campaign-viewer'>

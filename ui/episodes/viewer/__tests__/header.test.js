@@ -9,7 +9,7 @@ describe ('basic tests', () => {
     const div = document.createElement('div')
     ReactDOM.render((
       <Router>
-        <Header episode={cache.episodes[0]} />
+        <Header episode={cache.episodes['prickards-quarrel']} />
       </Router>
     ), div)
     ReactDOM.unmountComponentAtNode(div)

@@ -19,7 +19,7 @@ authService.restoreExistingState()
 
 const defaultCache = {
   campaigns: [],
-  episodes: [],
+  episodes: {},
   upcomingEpisodes: [],
   topics: []
 }

@@ -38,7 +38,7 @@ export default function CampaignExplorer ({ cache={ campaigns: []} }) {
       </div>
       <div className='campaigns'>
         {cache.campaigns.map((campaign, i) => {
-          let episode = cache.episodes.find(ep => ep.id === campaign.upcomingEpisode)
+          let episode = cache.episodes[campaign.upcomingEpisode]
           let key = `campaign-explorer-preview-${i}`
           return <CampaignPreview key={key} campaign={campaign} episode={episode} invert={i%2} />
         })}

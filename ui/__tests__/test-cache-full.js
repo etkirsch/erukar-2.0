@@ -29,35 +29,37 @@ export const testCacheFull = {
     description: 'The legendary sword bestowed upon Arokan Falendar and wielded by Erevan Nightbreeze.',
     friendly_id: 'content%20selection%20#1'
   }],
-  episodes: [{
-    id: 'prickards-quarrel',
-    title: 'Prickard\'s Quarrel',
-    date: '2019-12-04T22:36:08.821Z',
-    gm: 'Evan Kirsch',
-    description: 'The Prickard Mine falls into chaos admist strikes and sabotage',
-    summary: 'This is the summary for this episode.',
-    artwork: [
-        '/static/images/parvion-example.png'
-    ],
-    level: 4,
-    characters: [{
-      id: -1,
-      name: 'Tycho',
+  episodes: {
+    'prickards-quarrel': {
+      id: 'prickards-quarrel',
+      title: 'Prickard\'s Quarrel',
+      date: '2019-12-04T22:36:08.821Z',
+      gm: 'Evan Kirsch',
+      description: 'The Prickard Mine falls into chaos admist strikes and sabotage',
+      summary: 'This is the summary for this episode.',
+      artwork: [
+          '/static/images/parvion-example.png'
+      ],
       level: 4,
-      player: {
-        name: 'Frank',
-        id: -1
-      }
-    }, {
-      id: -1,
-      name: 'Larry',
-      level: 6,
-      player: {
+      characters: [{
+        id: -1,
+        name: 'Tycho',
+        level: 4,
+        player: {
+          name: 'Frank',
+          id: -1
+        }
+      }, {
+        id: -1,
         name: 'Larry',
-        id: -1
-      }
-    }]
-  }],
+        level: 6,
+        player: {
+          name: 'Larry',
+          id: -1
+        }
+      }]
+    }
+  },
   campaigns: [{
     id: 'the-history-of-edraston',
     title: 'The History of Edraston',

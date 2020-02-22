@@ -10,7 +10,7 @@ export default function EpisodeViewer ({ apiService, cache={ episodes: [], campa
   const { episodeId } = useParams() 
 
   useEffect(() => {
-    let found = cache.episodes.find((cachedCopy) => cachedCopy.id === episodeId)
+    let found = cache.episodes[episodeId]
     setEpisode(found)
   }, [cache, episodeId])
 

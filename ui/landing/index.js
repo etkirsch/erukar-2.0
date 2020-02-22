@@ -6,7 +6,7 @@ import './landing.scss'
 export default function LandingPage ({ cache }) {
   let upcomingEpisodeId = cache.upcomingEpisodes[0]
   let campaign = cache.campaigns.find(x => x.upcomingEpisode === upcomingEpisodeId)
-  let episode = cache.episodes.find(x => x.id === upcomingEpisodeId)
+  let episode = cache.episodes[upcomingEpisodeId]
 
   return (
     <div className='landing-page'>
