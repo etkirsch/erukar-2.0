@@ -5,12 +5,12 @@ import ViewerSummary from './summary'
 import NotFound from '../../errors/404'
 import './episode-viewer.scss'
 
-export default function EpisodeViewer ({ apiService, cache=[] }) {
+export default function EpisodeViewer ({ apiService, cache={ episodes: [], campaigns: []} }) {
   let [episode, setEpisode] = useState()
   const { episodeId } = useParams() 
 
   useEffect(() => {
-    let found = cache.find((cachedCopy) => cachedCopy.id === episodeId)
+    let found = cache.episodes.find((cachedCopy) => cachedCopy.id === episodeId)
     setEpisode(found)
   }, [cache, episodeId])
 

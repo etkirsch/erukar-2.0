@@ -6,12 +6,12 @@ import ViewerSummary from './summary'
 import NotFound from '../../errors/404'
 import './campaign-viewer.scss'
 
-export default function CampaignViewer ({ apiService, cache=[] }) {
+export default function CampaignViewer ({ apiService, cache={} }) {
   let [campaign, setCampaign] = useState()
   const { id } = useParams() 
 
   useEffect(() => {
-    let found = cache.find((cachedCopy) => cachedCopy.id === id)
+    let found = cache.campaigns.find((cachedCopy) => cachedCopy.id === id)
     setCampaign(found)
   }, [cache, id])
 
@@ -29,10 +29,14 @@ export default function CampaignViewer ({ apiService, cache=[] }) {
     return <NotFound id={id} type='campaign' />
   }
 
+  let upcomingEpisode = cache.episodes.find(ep => ep.id === campaign.upcomingEpisode)
+
   return (
     <div className='campaign-viewer'>
       <ViewerHeader campaign={campaign} />
-      {campaign.upcomingEpisode && <UpcomingEpisode episode={campaign.upcomingEpisode} campaign={campaign} />}
+      {upcomingEpisode &&
+        <UpcomingEpisode episode={upcomingEpisode} campaign={campaign} />
+      }
       <div className='artwork' style={{backgroundImage: `url(${campaign.artwork[0]})`}} />
       <ViewerSummary campaign={campaign} />
     </div>
