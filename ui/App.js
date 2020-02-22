@@ -17,10 +17,16 @@ const apiService = new ApiService()
 const authService = new AuthenticationService(apiService) 
 authService.restoreExistingState()
 
+const defaultCache = {
+  campaigns: [],
+  episodes: [],
+  upcomingEpisodes: [],
+  topics: []
+}
+
 function App() {
   let [isAuthenticated, setAuthenticated] = useState(authService.hasValidState())
-  const [cache, setCache] = useState({ campaigns: [], episodes: []})
-  const [episodes, setEpisodes] = useState([])
+  const [cache, setCache] = useState(defaultCache)
 
   useEffect(() => {
     apiService.call({ endpoint: '/pull-cache' })
@@ -47,7 +53,7 @@ function App() {
           <EpisodeViewer cache={cache} />
         </Route>
         <Route path="/">
-          <Landing campaign={cache.campaigns[0]} upcomingEpisode={cache.episodes[0]} />
+          <Landing cache={cache} />
         </Route>
       </Switch>
     )

@@ -1,3 +1,39 @@
+import random
+
+topics = [{
+    'title': 'Legends of Erukar',
+    'description': 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
+    'friendly_id': 'content%20selection%20#1',
+    'controls': [
+        { 'text': 'Dismiss', 'route': '/legends/dismiss' },
+        { 'text': 'Learn More', 'route': '/help/legends' },
+    ]
+}, {
+    'title': 'The Second Scourge',
+    'description': 'The second Vrakk scourge, which nearly brought the Tolmean continent to total destruction and allowed Alacron Draume to usurp the Altaen Throne.',
+    'friendly_id': 'the%20second%20scourge'
+}, {
+    'title': 'The Thaedoth Theocracy',
+    'description': 'The first Tolmean superpower built on the religion of Thessen. The Theocracy existed for over a millenium and shaped the future of Tolmea.',
+    'friendly_id': 'the%20thaedoth%20theocracy'
+}, {
+    'title': 'Aeges',
+    'description': 'The Divine Font responsible for protection and longevity. Currently controlled by the god Aegea, who is aligned with Alacron Draume.',
+    'friendly_id': 'aeges'
+}, {
+    'title': 'The Will of Aseferos',
+    'description': 'The legendary sword bestowed upon Arokan Falendar and wielded by Erevan Nightbreeze.',
+    'friendly_id': 'the%20will%20of%20Aseferos'
+}, {
+    'title': 'The Deceit of Yzerbos (Soulshard)',
+    'description': 'The Soulshard of Yzerbos discovered by Bobbity Squiggles within the sealed tombs under Zethett.',
+    'friendly_id': 'the%20deceit%20of%20yzerbos'
+}, {
+    'title': 'Barlen',
+    'description': 'A town in Iuria whose primary trade is barley and flour production. Barlen is home to the Barlen Baker\'s Guild and Consultants and Dragons.',
+    'friendly_id': 'the%20deceit%20of%20yzerbos'
+}]
+
 episodes = [{
     'id': 'prickards-quarrel',
     'title': 'Prickard\'s Quarrel',
@@ -37,7 +73,7 @@ campaigns = [{
     'artwork': [
         '/static/images/ashta-example.jpg'
     ],
-        'upcomingEpisode': 'prickards-quarrel'
+    'upcomingEpisode': 'prickards-quarrel'
 }, {
     'id': 'the-second-scourge',
     'title': 'The Second Scourge',
@@ -60,7 +96,12 @@ campaigns = [{
     ]
 }]
 
+random.shuffle(topics)
+validEpisodes = [x.get('upcomingEpisode', '') for x in campaigns if x.get('upcomingEpisode','') is not ''],
+
 fake_cache_data = {
     'episodes': episodes,
-    'campaigns': campaigns
+    'campaigns': campaigns,
+    'upcomingEpisodes': random.choice(validEpisodes),
+    'topics': topics[:5]
 }
