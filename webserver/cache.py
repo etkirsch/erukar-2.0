@@ -97,7 +97,7 @@ campaigns = [{
 }]
 
 random.shuffle(topics)
-validEpisodes = [x.get('upcomingEpisode', '') for x in campaigns if x.get('upcomingEpisode','') is not ''],
+validEpisodes = [x.get('upcomingEpisode', '') for x in campaigns if x.get('upcomingEpisode','') !=  ''],
 
 fake_cache_data = {
     'episodes': episodes,
