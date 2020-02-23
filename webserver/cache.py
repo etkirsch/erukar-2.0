@@ -1,5 +1,38 @@
 import random
 
+characters = {
+    'tycho': {
+        'id': 'tycho',
+        'name': 'Tycho of Dalinasus',
+        'profession': 'Barbarian',
+        'level': 4,
+        'player_id': 'frank',
+        'icon': 'https://erukar-cloud.s3.amazonaws.com/bard.png',
+        'campaigns': ['the-history-of-edraston'],
+        'tags': []
+    },
+    'larry': {
+        'id': 'larry',
+        'name': 'Larry D\'Avid',
+        'profession': 'Awkward Wizard',
+        'level': 6,
+        'player_id': 'larry',
+        'icon': 'https://erukar-cloud.s3.amazonaws.com/merchant.png',
+        'campaigns': ['the-history-of-edraston'],
+        'tags': []
+    },
+    'redrigo': {
+        'id': 'redrigo',
+        'name': 'Redrigo de Rojo',
+        'profession': 'The Rouge Rogue',
+        'level': 4,
+        'player_id': 'rod',
+        'icon': 'https://erukar-cloud.s3.amazonaws.com/scout.png',
+        'campaigns': ['the-history-of-edraston'],
+        'tags': []
+    }
+}
+
 topics = [{
     'title': 'Legends of Erukar',
     'description': 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
@@ -36,7 +69,8 @@ topics = [{
 
 episodes = {
     'prickards-quarrel': {
-        'id': 'prickards-quarrel', 
+        'id': 'prickards-quarrel',
+        'campaign': 'the-history-of-edraston',
         'title': 'Prickard\'s Quarrel',
         'date': '2019-12-04T22:36:08.821Z',
         'gm': 'Evan Kirsch',
@@ -46,26 +80,11 @@ episodes = {
             '/static/images/parvion-example.png'
         ],
         'level': 4,
-        'characters': [{
-            'id': -1,
-            'name': 'Tycho',
-            'level': 4,
-            'player': {
-                'name': 'Frank',
-                'id': -1
-            }
-        }, {
-            'id': -1,
-            'name': 'Larry',
-            'level': 6,
-            'player': {
-                'name': 'Larry',
-                'id': -1
-            }
-        }],
+        'characters': ['larry', 'tycho']
     },
     'the-first-episode': {
         'id': 'the-first-episode',
+        'campaign': 'the-history-of-edraston',
         'title': 'The First Episode',
         'date': '2019-11-09T22:36:08.821Z',
         'gm': 'Evan Kirsch',
@@ -75,31 +94,7 @@ episodes = {
             '/static/images/parvion-example.png'
         ],
         'level': 4,
-        'characters': [{
-            'id': -1,
-            'name': 'Tycho',
-            'level': 4,
-            'player': {
-                'name': 'Frank',
-                'id': -1
-            }
-        }, {
-            'id': -1,
-            'name': 'Red',
-            'level': 3,
-            'player': {
-                'name': 'Reddington',
-                'id': -1
-            }
-        }, {
-            'id': -1,
-            'name': 'Larry',
-            'level': 6,
-            'player': {
-                'name': 'Larry',
-                'id': -1
-            }
-        }],
+        'characters': ['larry', 'tycho', 'redrigo']
     }
 }
 
@@ -143,5 +138,6 @@ fake_cache_data = {
     'episodes': episodes,
     'campaigns': campaigns,
     'upcomingEpisodes': random.choice(validEpisodes),
-    'topics': topics[:5]
+    'topics': topics[:5],
+    'characters': characters
 }

@@ -95,12 +95,12 @@
   }
 
   .summary {
-    margin-left: 25vw;
-    margin-right: 25vw;
+    margin: 0 auto;
+    max-width: 40em;
     font-size: 16pt;
     text-align: left;
     line-height: 22pt;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
     text-align: justify;
 
     .first-letter {
@@ -111,6 +111,7 @@
 
     @media (max-width: 1000px) {
       margin: 0;
+      max-width: initial;
       font-size: 12pt;
       line-height: 18pt;
       text-align: justify;

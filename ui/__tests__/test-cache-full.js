@@ -1,5 +1,25 @@
 export const testCacheFull = {
   upcomingEpisodes: ['prickards-quarrel'],
+  characters: {
+    'tycho': {
+        'id': 'tycho',
+        'name': 'Tycho of Dalinasus',
+        'profession': 'Barbarian',
+        'level': 4,
+        'player_id': 'frank',
+        'campaigns': ['the-history-of-edraston'],
+        'tags': []
+    },
+    'larry': {
+        'id': 'larry',
+        'name': 'Larry D\'Avid',
+        'profession': 'Awkward Wizard',
+        'level': 6,
+        'player_id': 'larry',
+        'campaigns': ['the-history-of-edraston'],
+        'tags': []
+    }
+  },
   topics: [{
     title: 'Legends of Erukar',
     description: 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
@@ -41,23 +61,7 @@ export const testCacheFull = {
           '/static/images/parvion-example.png'
       ],
       level: 4,
-      characters: [{
-        id: -1,
-        name: 'Tycho',
-        level: 4,
-        player: {
-          name: 'Frank',
-          id: -1
-        }
-      }, {
-        id: -1,
-        name: 'Larry',
-        level: 6,
-        player: {
-          name: 'Larry',
-          id: -1
-        }
-      }]
+      'characters': ['larry', 'tycho']
     }
   },
   campaigns: [{

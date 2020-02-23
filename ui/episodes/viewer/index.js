@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ViewerHeader from './header'
 import ViewerSummary from './summary'
+import CharacterList from './character-list'
 import NotFound from '../../errors/404'
 import './episode-viewer.scss'
 
-export default function EpisodeViewer ({ apiService, cache={ episodes: [], campaigns: []} }) {
+export default function EpisodeViewer ({ apiService, cache }) {
   let [episode, setEpisode] = useState()
   const { episodeId } = useParams() 
 
@@ -33,6 +34,7 @@ export default function EpisodeViewer ({ apiService, cache={ episodes: [], campa
       <ViewerHeader episode={episode} />
       <div className='artwork' style={{backgroundImage: `url(${episode.artwork[0]})`}} />
       <ViewerSummary episode={episode} />
+      <CharacterList episode={episode} cache={cache} />
     </div>
   )
 }
