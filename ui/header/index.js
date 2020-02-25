@@ -1,6 +1,7 @@
 import React, { useState } from 'react' 
 import Auth0Row from '../auth/AuthenticationRow'
 import SidePanel from './side-panel'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './header.scss'
 
@@ -33,7 +34,7 @@ export default function Header ({ authService, campaigns, onAuthStateChange }) {
       <div className={hamburgerClass} onClick={hamburgerClick}>
         <FontAwesomeIcon icon="bars" />
       </div>
-      <div className='title'>Erukar 2.0</div>
+      <div className='title'><Link to="/">Erukar 2.0</Link></div>
       <Auth0Row onAuthStateChange={onAuthStateChange} service={authService} />
     </header>
   )
