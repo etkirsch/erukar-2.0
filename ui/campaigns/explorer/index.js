@@ -8,7 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
 library.add(fas, faLock)
 
-export default function CampaignExplorer ({ campaigns }) {
+export default function CampaignExplorer ({ cache={ campaigns: []} }) {
   let content = [{
     title: 'Create a Campaign',
     description: 'Create a campaign for the D&D 5e, Pathfinder 2e, Shadows of the Demon Lord, or Legends of Erukar system.',
@@ -37,9 +37,10 @@ export default function CampaignExplorer ({ campaigns }) {
         Highlighted Campaigns
       </div>
       <div className='campaigns'>
-        {campaigns.map((campaign, i) => {
+        {cache.campaigns.map((campaign, i) => {
+          let episode = cache.episodes[campaign.upcomingEpisode]
           let key = `campaign-explorer-preview-${i}`
-          return <CampaignPreview key={key} campaign={campaign} invert={i%2} />
+          return <CampaignPreview key={key} campaign={campaign} episode={episode} invert={i%2} />
         })}
       </div>
       <ContentArea content={content} />

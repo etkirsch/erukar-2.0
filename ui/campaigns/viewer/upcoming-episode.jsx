@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './upcoming-episode.scss'
 
 export default function UpcomingEpisode ({ episode }) {
@@ -18,7 +19,7 @@ export default function UpcomingEpisode ({ episode }) {
       <div className='preview'>{preview()}</div>
       <div className='description'>{episode.description}</div>
       <div className='controls'>
-        <div>Read More</div>
+        <div><Link to={`/episodes/${episode.id}`}>Read More</Link></div>
         <div>Join</div>
       </div>
     </div>

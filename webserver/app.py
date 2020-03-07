@@ -4,6 +4,7 @@ from webserver.auth.auth0 import requires_auth, AuthError
 from webserver.database.PostPyreDbEngine import PostPyreDbEngine
 from webserver.database.models.TestModel import TestModel
 from webserver.lib import establish_routes_for_model
+from webserver.cache import fake_cache_data
 import os
 
 SHOULD_SERVE_STATIC = os.environ.get('SHOULD_SERVE_STATIC', False)
@@ -36,6 +37,14 @@ def app_root():
 def details_route():
     return 'Secret Information'
 
+
+@app.route('/pull-cache')
+def request_initial_data():
+    '''
+    This provides a direct route to the cache
+    For now, it's just a static method.
+    '''
+    return jsonify(fake_cache_data)
 
 @app.errorhandler(AuthError)
 def handle_auth_error(ex):

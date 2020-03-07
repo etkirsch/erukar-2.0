@@ -2,7 +2,7 @@ import React from 'react'
 import CampaignOverview from './overview'
 import UpcomingEpisode from './upcoming-episode'
 
-export default function CampaignPreview ({ campaign, invert=false }) {
+export default function CampaignPreview ({ campaign, episode, invert=false }) {
   function overview () {
     return <CampaignOverview campaign={campaign} />
   }
@@ -11,7 +11,7 @@ export default function CampaignPreview ({ campaign, invert=false }) {
     return (
       <div className='art-episode-container'>
         <div className='artwork' style={{backgroundImage: `url(${campaign.artwork[0]})`}} />
-        <UpcomingEpisode campaign={campaign} episode={campaign.upcomingEpisode} />
+        <UpcomingEpisode campaign={campaign} episode={episode} />
       </div>
     )
   }

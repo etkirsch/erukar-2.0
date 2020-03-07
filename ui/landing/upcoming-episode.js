@@ -27,7 +27,7 @@ export default function UpcomingEpisode ({ campaign, episode }) {
         <div className='at-a-glance'>{atAGlance()}</div>
         <div className='controls'>
           {campaign && <Link to={`/campaigns/${campaign.id}`}>See Campaign</Link>}
-          <Link to='/'>Read More</Link>
+          <Link to={`/episodes/${episode.id}`}>Read More</Link>
           <Link to='/'>Join</Link>
         </div>
       </div>

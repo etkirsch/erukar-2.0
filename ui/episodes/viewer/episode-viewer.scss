@@ -1,0 +1,122 @@
+.episode-viewer {
+  color: black;
+  font-family: 'Barlow', sans-serif;
+  width: stretch;
+
+  .top-controls {
+    display: flex;
+    width: stretch;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 3em;
+
+    .control {
+      background: #1b1b1b;
+      font-size: 11pt;
+      margin-left: 2em;
+      margin-right: 2em;
+      width: 10em;
+      padding: 0.5em;
+      color: white;
+      line-height: 20pt;
+      font-weight: 400;
+
+      &:hover {
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1000px) {
+        margin-left: 1em;
+        margin-right: 1em;
+        font-size: 9pt;
+        line-height: 16pt;
+      }
+    }
+  }
+
+  .header {
+    margin-top: 5em;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-bottom: 2em;
+    line-height: 1.5em;
+    font-size: 14pt;
+
+    @media (max-width: 1000px) {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 2em;
+      font-size: 11pt;
+    }
+
+    .title {
+      margin-top: 1em;
+      font-size: 42pt;
+      font-weight: 600;
+      margin-bottom: 1em;
+
+      @media (max-width: 1000px) {
+        line-height: 32pt;
+        font-size: 32pt;
+      }
+    }
+
+    .description {
+      margin-bottom: 0.5em;
+      margin-top: 1.5em;
+
+    }
+
+    .gm {
+      margin-bottom: 3.0em;
+      margin-top: 1.5em;
+      font-weight: 600;
+    }
+  }
+
+  .artwork {
+    position: relative;
+    object-fit: cover;
+    width: stretch;
+    background-repeat: no-repeat;
+    align-items: center;
+    display: grid;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 1em;
+
+    @media (max-width: 1000px) {
+      margin-bottom: 1em;
+      height: 50vh;
+    }
+  }
+
+  .summary {
+    margin: 0 auto;
+    max-width: 40em;
+    font-size: 16pt;
+    text-align: left;
+    line-height: 22pt;
+    margin-bottom: 1em;
+    text-align: justify;
+
+    .first-letter {
+      font-family: 'Montserrat', sans-serif;
+      display: inline-block;
+      font-size: 32pt;
+    }
+
+    @media (max-width: 1000px) {
+      margin: 0;
+      max-width: initial;
+      font-size: 12pt;
+      line-height: 18pt;
+      text-align: justify;
+      padding: 1.5em;
+      padding-top: 0;
+    }
+  }
+}
