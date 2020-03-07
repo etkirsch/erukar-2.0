@@ -77,7 +77,7 @@ episodes = {
         'description': 'The Prickard Mine falls into chaos admist strikes and sabotage',
         'summary': 'This is the summary for this episode.',
         'artwork': [
-            '/static/images/parvion-example.png'
+            'https://erukar-cloud.s3.amazonaws.com/parvion-example.png'
         ],
         'level': 4,
         'characters': ['larry', 'tycho']
@@ -91,7 +91,7 @@ episodes = {
         'description': 'The party arrives to Edraston',
         'summary': 'The players arrived at Edraston. Hijinks ensued, and the players went off to examine the Edras Mines. After some cautionary battling, the players cleared the Mine and returned triumphant.',
         'artwork': [
-            '/static/images/parvion-example.png'
+            'https://erukar-cloud.s3.amazonaws.com/parvion-example.png'
         ],
         'level': 4,
         'characters': ['larry', 'tycho', 'redrigo']
@@ -105,7 +105,7 @@ campaigns = [{
     'description': 'A sandbox campaign set in the fourth century of the Thaedoth Theocratic Imperium',
     'summary': '381, Thaedoth Era. Settlers flock to the Mt. Edras region following the discovery of a black crystal called "Salericite". The demand for Salericite skyrocketed overnight, causing an influx of fortune-seekers and career criminals. A settlement has started between the Edras and Prickard Mines. ',
     'artwork': [
-        '/static/images/ashta-example.jpg'
+        'https://erukar-cloud.s3.amazonaws.com/ashta-example.jpg'
     ],
     'upcomingEpisode': 'prickards-quarrel',
     'episodes': ['the-first-episode', 'prickards-quarrel']
@@ -117,7 +117,7 @@ campaigns = [{
     'summary': 'In 542 CA, Alacron Draume, the High Justice of the Kingdom of Iuria, established a small task force to investigate an entity deep beneath the Moq Sulhan mines. This entity was discovered to be the Prime Defiler Karravaska who almost nearly destroyed the world with the First Vrakk Scourge. The High Justice\'s brother Rathod set Karravaska free, and the task force stepped up to stop the Second Scourge.',
     'hasCompleted': True,
     'artwork': [
-        '/static/images/ygdiras-example.jpg'
+        'https://erukar-cloud.s3.amazonaws.com/ygdiras-example.jpg'
     ]
 }, {
     'id': 'consultants-and-dragons',
@@ -127,7 +127,7 @@ campaigns = [{
     'summary': 'The adventuring guild known as \'Consultants and Dragons\' was formed in Barlen, Iuria, by the retired Archmage Vorenus Magnus. Hijinks ensued, as the Consultants staged (failed) heists and expeditions into the no-man\'s-land, Erukar. This campaign concluded when the King of Iuria Riphel II was assassinated in Luinden on Kingsday, sparking the resistance war called the Iurian Reclamation.',
     'hasCompleted': True,
     'artwork': [
-        '/static/images/shamradaer-example.png'
+        'https://erukar-cloud.s3.amazonaws.com/shamradaer-example.png'
     ]
 }]
 
