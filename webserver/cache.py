@@ -33,6 +33,68 @@ characters = {
     }
 }
 
+users = {
+    'rod': {
+        'id': 'rod',
+        'name': 'Rodrigo',
+        'campaigns': {
+            'the-history-of-edraston': 'player'
+        },
+        'characters': ['redrigo'],
+        'preferences': {
+            'receiveNotifications': False
+        },
+        'roles': ['player', 'trusted']
+    },
+    'larry': {
+        'id': 'larry',
+        'name': 'Larry',
+        'email': 'fake@fakemail.com',
+        'campaigns': {
+            'the-history-of-edraston': 'player',
+            'the-second-scourge': 'player'
+        },
+        'characters': ['larry'],
+        'preferences': {
+            'receiveNotifications': True,
+            'notifyOfNewEpisodes': True,
+            'notifyOfNewLore': True,
+            'notifyOfPatches': False
+        },
+        'roles': ['player', 'minor-admin']
+    },
+    'evan': {
+        'id': 'evan',
+        'name': 'Evan',
+        'campaigns': {
+            'consultants-and-dragons': 'gm',
+            'the-second-scourge': 'gm',
+            'the-history-of-edraston': 'gm',
+        },
+        'characters': [],
+        'preferences': {
+            'receiveNotifications': False
+        },
+        'roles': ['gm', 'admin']
+    },
+    'frank': {
+        'id': 'Frank',
+        'email': 'frank@reynolds-wrap.com',
+        'name': 'Danny',
+        'campaigns': {
+            'the-history-of-edraston': 'player'
+        },
+        'characters': ['tycho'],
+        'preferences': {
+            'receiveNotifications': True,
+            'notifyOfNewEpisodes': False,
+            'notifyOfNewLore': True,
+            'notifyOfPatches': False
+        },
+        'roles': ['player', 'content-creator']
+    }
+}
+
 topics = [{
     'title': 'Legends of Erukar',
     'description': 'A Multiplayer Roguelike set within the world of Eikalis after the end of the Second Scourge of Vrakaros',
@@ -82,6 +144,18 @@ episodes = {
         'level': 4,
         'characters': ['larry', 'tycho']
     },
+    'random-title': {
+        'id': 'random-title',
+        'campaign': 'the-history-of-edraston',
+        'title': 'An Episode with a Random Title',
+        'date': '2020-03-12T22:36:08.821Z',
+        'gm': 'Evan Kirsch',
+        'description': 'An episode without a true title',
+        'summary': 'This episode was created with the sole purpose of adding fluff to the testable content while I develop. This is a fairly long description, because I want to see what happens when the txt goes for a longer amount of space. Eventually, this unformatted string will be replaced with draftjs wysiwyg, whereupon I can bring all of the lore from my original site into this one. I hope I don\'t lose all of that data.',
+        'artwork': ['https://erukar-cloud.s3.amazonaws.com/town-example.jpg'],
+        'level': 10,
+        'characters': ['redrigo', 'tycho']
+    },
     'the-first-episode': {
         'id': 'the-first-episode',
         'campaign': 'the-history-of-edraston',
@@ -108,7 +182,7 @@ campaigns = [{
         'https://erukar-cloud.s3.amazonaws.com/ashta-example.jpg'
     ],
     'upcomingEpisode': 'prickards-quarrel',
-    'episodes': ['the-first-episode', 'prickards-quarrel']
+    'episodes': ['the-first-episode', 'prickards-quarrel', 'random-title']
 }, {
     'id': 'the-second-scourge',
     'title': 'The Second Scourge',
@@ -139,5 +213,6 @@ fake_cache_data = {
     'campaigns': campaigns,
     'upcomingEpisodes': random.choice(validEpisodes),
     'topics': topics[:5],
-    'characters': characters
+    'characters': characters,
+    'players': users
 }
