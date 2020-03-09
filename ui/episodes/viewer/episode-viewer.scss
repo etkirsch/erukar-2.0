@@ -62,6 +62,15 @@
       }
     }
 
+    .date {
+      font-style: italic;
+      font-size: 11pt;
+
+      @media (max-width: 1000px) {
+        font-size: 10pt;
+      }
+    }
+
     .description {
       margin-bottom: 0.5em;
       margin-top: 1.5em;
